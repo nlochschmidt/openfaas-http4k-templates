@@ -1,0 +1,12 @@
+// This file gets referenced from inside the OpenFaaS template,
+// but you can update the versions here.
+
+/**
+ * Do not rename this field or compilation will fail
+ */
+ext.kotlin_version = '1.3.41'
+
+/**
+ * Do not rename this field or compilation will fail
+ */
+    ext.http4k_version = '3.172.0'

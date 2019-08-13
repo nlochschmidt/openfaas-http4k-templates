@@ -1,0 +1,2 @@
+language: java11-kotlin-http4k
+fprocess: java -jar function.jar
