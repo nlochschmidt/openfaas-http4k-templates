@@ -31,7 +31,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation "org.http4k:http4k-core:$http4k_version"
-    implementation "org.http4k:http4k-server-apache:$http4k_version"
 
     implementation project(':function')
 

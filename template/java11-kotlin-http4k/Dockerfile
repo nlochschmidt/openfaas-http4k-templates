@@ -5,7 +5,7 @@ RUN apk --no-cache add openjdk11-jdk openjdk11-jmods
 RUN /usr/lib/jvm/java-11-openjdk/bin/jlink \
     --verbose \
     --add-modules \
-        java.base,java.sql,java.logging,java.xml \
+        java.base,java.sql,java.logging,java.xml,jdk.httpserver \
     --compress 2 --strip-debug --no-header-files --no-man-pages \
     --release-info="add:IMPLEMENTOR=nlochschmidt:IMPLEMENTOR_VERSION=minimal_jre" \
     --output "/opt/java_minimal"
