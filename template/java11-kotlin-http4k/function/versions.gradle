@@ -4,7 +4,7 @@
 /**
  * Do not rename this field or compilation will fail
  */
-ext.kotlin_version = '1.3.41'
+ext.kotlin_version = '1.3.61'
 
 /**
  * Do not rename this field or compilation will fail
