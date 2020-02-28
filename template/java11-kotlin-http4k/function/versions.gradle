@@ -9,4 +9,4 @@ ext.kotlin_version = '1.3.41'
 /**
  * Do not rename this field or compilation will fail
  */
-    ext.http4k_version = '3.172.0'
+ext.http4k_version = '3.238.0'
