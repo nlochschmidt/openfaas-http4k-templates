@@ -23,6 +23,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.http4k:http4k-core:$http4k_version"
 
+    testImplementation "org.http4k:http4k-testing-hamkrest:$http4k_version"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:$junit_version"
 }
