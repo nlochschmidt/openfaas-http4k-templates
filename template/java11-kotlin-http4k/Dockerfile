@@ -22,7 +22,7 @@ RUN gradle classes || return 0
 COPY . .
 RUN gradle shadowJar
 
-FROM openfaas/of-watchdog:0.5.4 as watchdog
+FROM openfaas/of-watchdog:0.7.6 as watchdog
 
 FROM alpine:3.11
 
@@ -34,12 +34,13 @@ COPY --from=minimal_jre /opt/java_minimal $JAVA_HOME
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 COPY --from=build /app/build/libs/*-all.jar function.jar
 
-ENV cgi_headers="true"
-ENV fprocess="java -jar /app/function.jar"
-ENV mode="http"
-ENV upstream_url="http://127.0.0.1:3000"
+RUN chown -R app /home/app
+USER app
 
-ENV exec_timeout="10s"
+ENV function_process="java -jar /app/function.jar"
+ENV mode="http"
+ENV http_upstream_url="http://127.0.0.1:3000"
+
 ENV write_timeout="15s"
 ENV read_timeout="15s"
 
