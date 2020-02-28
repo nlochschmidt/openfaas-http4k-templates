@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     apply from: 'function/versions.gradle'
-    ext.junit_version = '5.5.1'
+    ext.junit_version = '5.6.0'
 
     repositories {
         mavenCentral()
