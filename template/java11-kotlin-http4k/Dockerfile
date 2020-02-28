@@ -1,4 +1,4 @@
-FROM alpine:3.10 as minimal_jre
+FROM alpine:3.11 as minimal_jre
 
 RUN apk --no-cache add openjdk11-jdk openjdk11-jmods
 
@@ -10,7 +10,7 @@ RUN /usr/lib/jvm/java-11-openjdk/bin/jlink \
     --release-info="add:IMPLEMENTOR=nlochschmidt:IMPLEMENTOR_VERSION=minimal_jre" \
     --output "/opt/java_minimal"
 
-FROM gradle:5.5.1-jdk11 as build
+FROM gradle:6.2.1-jdk11 as build
 ENV APP_HOME=/app
 WORKDIR $APP_HOME
 WORKDIR /app
@@ -24,7 +24,7 @@ RUN gradle shadowJar
 
 FROM openfaas/of-watchdog:0.5.4 as watchdog
 
-FROM alpine:3.10
+FROM alpine:3.11
 
 ENV JAVA_HOME=/opt/jre
 ENV PATH="$PATH:$JAVA_HOME/bin"
